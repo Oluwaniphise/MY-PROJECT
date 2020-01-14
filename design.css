@@ -4,9 +4,8 @@
     box-sizing: border-box;
 }
 body{
-    margin:0;
-    padding:0;
-    font-family:"Roboto", sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height:1.5;
     overflow-x: hidden;
 }
 nav{
@@ -14,24 +13,22 @@ nav{
     justify-content: space-between;
     align-items:center;
     background:#333;
+    
 }
 nav ul{
     margin:0;
     padding:0;
     display:flex;
 }
- nav ul li{
+nav ul li{
     list-style: none;
- 
-}
+ }
 nav ul li a{
     text-decoration:none;
     color:white;
     padding:1rem;
     display:block;
     font-size:19px;
-    
-   
 }
 nav ul li a:hover{
     background-color:#00c07f;
@@ -52,41 +49,66 @@ nav ul li a:hover{
     width:100%;
     background-color:white;
     border-radius:10px;
-
 }
 .name-header{
    color: #26de81;
     font-size:1.5rem;
-    margin:0.5rem
+   
 }
 h4{
     font-size:24px;
 }
 .container{
-    display:flex;
-   
+ position:relative;
+ 
 }
 
 .girl-image{
-    background-image:url("GWB.jpg");
+    background-image:url("GWB.jpg") ;
     background-attachment: scroll;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    width:90%;
+    max-width:100%;
     height:100vh;
-    width:690px;
+  } 
+
+.girl-overlay,.girl-image{
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}
+.girl-overlay{
+    background:black;
+    opacity:0.65;
+    z-index: 2;
+}
+.girl-text{
+    position:relative;
+    top:5rem;
+    z-index:3;
+    height:100vh;
+    color:white;
+    text-align:center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
 }
 
-.girl-text{
-    font-family: 'Noto Sans KR', sans-serif;
-    max-width:500px;
-    position:relative;
-    top:250px;
-    
-   
-}
+
 .h4-girl-text{
-    font-size:30px;
+    font-size:35px;
+    
+}
+.par-text{
+    font-size:1.5rem;
+    margin:0 5rem 0 5rem;
+ 
 }
 #btn{
     border-radius:25px;
@@ -95,9 +117,6 @@ h4{
     background:#00c07f;
     color:#fff;
     cursor:pointer;
-    position:relative;
-    left:380px;
-    top:5px; 
 }
 .container-2{
     display: flex;
@@ -105,7 +124,7 @@ h4{
     padding:50px 50px;
 }
 .flex1,.flex2,.flex3{
-    width:380px;
+    width:500px;
     margin:15px;
     color:white;
 }
@@ -116,9 +135,7 @@ h4{
     padding:10px 20px;
     color:#00c07f;
     cursor:pointer;
-    position:relative;
-    top:30px;
-   
+    
 }
 .news{
     margin-left:150px;
@@ -133,12 +150,7 @@ h4{
 .date:last-child{
     border-bottom:none;
 }
-
-
-
-
-
-.pple-image{
+.image2{
     background:url("pencils.jpg");
     background-position:center;
     background-attachment: scroll;
@@ -146,97 +158,147 @@ h4{
     background-size: cover;
     height:300px;
     width:100vw;
-    text-align:center;
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
+    text-align:center;
+ 
 } 
-.pple-text{
+.image2-text{
     color:white;
     padding:15px;
     margin:10px;
-    
-    
 }
-
-.header-pple-text{
+.image2-header-text{
     color:white;
     font-size:25px;
 }
-.par-pple-text{
+.image2-par-text{
     color:white;
 }
+input[type="email"]{
+    width:250px;
+    height:30px;
+    border-radius:25px;
+    border:1px solid white;
+    padding:20px;
+}
+input[type="submit"]{
+    background:#00c07f;
+    border:1px solid #00c07f;
+    text-align: center;
+    padding:10px;
+    font-weight:bold;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* MEDIA QUERIES */
 @media screen and (max-width:992px){
     .toggle-button{
         display:flex;
-        }
+    }
     nav{
         flex-direction:column;
         width:100%;
-}
+        }
     nav ul{
-       /* display:none;*/
-      flex-direction:column;
-        width:100%
-
-    }
+       display:none;
+       width:100%;
+       }
     nav ul li{
         text-align:center;
     }
     nav ul li a {
         border-bottom:1px solid gray;
     }
-
-
-
-}
-@media screen and (max-width:600px){
-    
-    .container-2{
-        display:flex;
-        flex-direction:column;
-        background-color:#00c07f ;
-        font-family: 'Questrial', sans-serif;
-        position:relative;
-        bottom:50px;
-        padding:0;
+    .active{
+        display:block;
     }
-    
-    .flex1,.flex2,.flex3{
+    .h4-girl-text{
+        font-size:25px;
+        padding-left:2rem;
+        padding-right:2rem;
+    }
+  
+    .par-text{
+        font-size:1.4rem;
+        margin-left:2rem;
+        margin-right:2rem;
+    }
+ .flex1,.flex2,.flex3{
         text-align:center;
         color:white;
         width:auto;
         padding:5px;
         margin:10px;
+        padding-left:1.5rem;
+        padding-right:1.5rem;
     }
-    #btn-2{
-    display:none;
+    .container-2{
+        display:flex;
+        flex-direction:column;
+        background-color:#00c07f ;
+        font-family: 'Questrial', sans-serif;
+        padding:20px 0px; 
+        text-align:center;
     }
+  
+   
+   
+    .date{
+        border-bottom:1px solid grey;
+        margin:5px;
+        padding:5px;
+        width:auto;
+    }
+    .news{
+        display:default;
+        margin:5px;
+    }
+    #btn2{
+        position:relative;
+        top:10px;
+    }
+
+  
 }
+
+    
+   
+    @media screen and (min-width:200px) and (max-width:600px){
+      
+        .h4-girl-text{
+            font-size:24px;
+            margin:0 1.5rem 0 1.5rem;
+        }
+        .par-text{
+            font-size:1.1rem;
+            margin-left:1rem;
+            margin-right:1rem; 
+            padding-left:0;
+            padding-right:0;
+        }
+        #btn{
+            border-radius:25px;
+            border:1px solid #00c07f;
+            padding:10px 20px;
+            background:#00c07f;
+            color:#fff;
+            cursor:pointer;
+        
+        }
+    
+    .girl-image{
+        background-image:url("GWB.jpg") ;
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width:100%;
+        max-width:100%;
+        height:100vh;
+      } 
+}
+
