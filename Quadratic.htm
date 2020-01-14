@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quadratic Equation</title>
+  <style>
+    body{
+      padding:0;
+      margin:0;
+      background:brown;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
+    }
+    label {
+      display:inline-block;
+      text-align:right;
+      width:40%;
+     
+    }
+    input{
+      width:40%;
+      width:300px;
+      display:inline-block;
+      border-radius:10px;
+      padding:10px;
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    input:hover{
+      background:#f4f4f4;
+      transition:0.5s;
+    }
+    h3{
+      text-align:center;
+      color:white;
+      line-height:50px;
+      font-style:oblique;
+    }
+    input[type="submit"]{
+      cursor:pointer;
+      background:coral;
+      font-size:19px;
+      border-radius:15px;
+      width:150px;
+      margin-top:20px;
+      position:absolute;
+      left:630px;
+    }
+    
+    input[type="submit"]:hover{
+      background:chocolate;
+      transition:0.8s;
+    }
+    /* Media Queries */
+    @media (max-width:991px){
+      label {
+      display:inline-block;
+      text-align:right;
+      width:40%;
+     
+    }
+    input{
+      width:30%;
+      width:200px;
+      display:inline-block;
+      border-radius:10px;
+      padding:5px;
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    input[type="submit"]{
+      width:150px;
+      margin-top:25px;
+      position:absolute;
+      left:250px;
+    }
+    }
+    
+   
+  </style>
+  </head>
+
+		
+<body>
+  <h3>QUADRATIC EQUATION WITH EASE</h3>
+  <div>
+      <label>Value of squared term:</label>
+      <input type="text" placeholder="Enter the value of a" id="a">
+  </div>
+  <br /> <br />
+
+ <div>
+        <label>Value of x term:</label>
+        <input type="text" placeholder="Enter the value of b" id="b">
+  </div>
+ <br /> <br />
+
+  <div>
+         <label>Value of constant:</label>
+         <input type="text" placeholder="Enter the value of c" id="c">
+  </div>
+  <br /> <br />
+
+  <div>
+  <label>Answer:</label>
+  <input type="text" id="result"/>
+  </div>
+  
+
+ <input type="submit" onclick="Check()" value="Calculate">
+
+
+
+	<script>
+    
+    
+       // Quadratic equation JavaScript code
+       function Check(){
+        var a = parseInt(document.getElementById("a").value);
+        var b = parseInt(document.getElementById("b").value);
+        var c = parseInt(document.getElementById("c").value);
+        var d = (b**2) - (4 *  a * c);
+        var x1 = ((-b) + Math.sqrt(d)) / (2*a);
+        var x2 =((-b) - Math.sqrt(d)) / (2*a);
+        if(d < 0){
+
+      document.getElementById("result").value = "oops!,sorry.Complex roots";
+        }else{
+          document.getElementById("result").value = x1 + ", " + x2;
+        }
+          }
+    
+       </script>
+
+</body>
+</html>
