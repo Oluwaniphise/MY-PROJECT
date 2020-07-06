@@ -204,8 +204,9 @@ input[type="submit"]{
         width:100%;
         }
     nav ul{
-       display:none;
-       width:100%;
+        flex-direction:column;
+        display:none;
+        width:100%;
        }
     nav ul li{
         text-align:center;
